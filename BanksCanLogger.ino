@@ -19,8 +19,11 @@
 
 #include <SPI.h>
 #include <mcp_can.h>
-#include <mcp2515_can_dfs.h> // for MCP_EFLG_TXBO
 #include <SD.h>
+
+#ifndef MCP_EFLG_TXBO
+#define MCP_EFLG_TXBO 0x20  // Bus-off flag bit in EFLG register
+#endif
 
 #define CS_PIN       10
 #define SD_CS_PIN     4
